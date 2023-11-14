@@ -5,10 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix server/client && npm run build --prefix server/client"
-
-   
-   
+    "client-install":"cd client && npm install",
+    "client-build":"cd client && npm run build",
+    "heroku-postbuild": "npm run client-install && npm run client-build"
   },
   "author": "",
   "license": "ISC",
