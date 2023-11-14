@@ -13,11 +13,13 @@ dotenv.config();
 app.use(express.json());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true })); // For form data
+const corsOptions = {
+  origin: 'https://blogify-06vg.onrender.com',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow credentials (cookies, headers) to be sent
+};
 app.use(
-    cors({
-      origin:'*'// Replace with the allowed origin
-      
-    })
+    cors(corsOptions)
 );
 app.use('/',signupRoute);
 app.use('/',postRoute);
