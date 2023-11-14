@@ -21,9 +21,9 @@ app.use(
       
     })
 );
-app.use('/blogify',signupRoute);
-app.use('/blogify',postRoute);
-app.use('/blogify',followRoute)
+app.use('/',signupRoute);
+app.use('/',postRoute);
+app.use('/',followRoute)
 const PORT=process.env.PORT || 8000;
 app.listen(PORT,()=>{
     console.log('server is running')
